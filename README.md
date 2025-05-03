@@ -29,12 +29,15 @@ A CUDA-based simulation of a Planck-scale network aiming to model emergent time,
 ```bash
 git clone https://github.com/pnoliveir/plank_universe.git
 cd plank_universe
+```
 2. **Compile**:
 ```bash
 nvcc -o sim sim.cu
+```
 3. **Run**:
 ```bash
 ./sim
+```
 
 ## Run notes
 • Outputs: tick_summary.csv (tick counts), cell_history.csv (plank states), map_info.csv (connections).
