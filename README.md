@@ -36,8 +36,9 @@ nvcc -o sim sim.cu
 ```bash
 ./sim
 
+## Run notes
 • Outputs: tick_summary.csv (tick counts), cell_history.csv (plank states), map_info.csv (connections).
-• Logs consume significant I/O; ensure ~5 TB free storage.
+• Logs consume significant I/O; ensure ~350/400GB free storage.
 • Simulation runs ~21–22 ticks, using ~200 GB RAM and 16GB GPU memory.
 Known Issues
 • Connection Loss: Neighbor connections fail after tick 18/19 when plankCount exceeds GPU memory (~184M planks), reducing growth rate.
