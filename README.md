@@ -41,45 +41,85 @@ nvcc -o sim sim.cu
 
 ## Run notes
 • Outputs: tick_summary.csv (tick counts), cell_history.csv (plank states), map_info.csv (connections).
+
 • Logs consume significant I/O; ensure ~350/400GB free storage.
+
 • Simulation runs ~21–22 ticks, using ~200 GB RAM and 16GB GPU memory.
-Known Issues
+
+
+## Known Issues
 • Connection Loss: Neighbor connections fail after tick 18/19 when plankCount exceeds GPU memory (~184M planks), reducing growth rate.
+
 • Logging Overhead: Writing CSVs for all planks/connections dominates runtime.
+
 • Memory: Host-GPU transfers slow down when batches exceed 16GB.
+
 • Missing Features: Imaginary clock (\tau_i) and retrocausality not yet implemented.
-Contributing
+
+## Contributing
+
 Join the revolution to build a singularity-free universe! We need help with:
+
 • Multi-GPU support (RTX 4060 Ti + 3050).
+
 • Optimizing logging (e.g., buffering, async I/O).
+
 • Implementing imaginary clock (\tau_i = i (N - n) t_P) and retrocausality.
+
 • Designing a 3D lattice network for realistic space-time.
+
 • Adding black hole cores and cosmological inflation scenarios.
-How to Contribute:
+
+## How to Contribute:
+
 • Fork the repo and submit pull requests.
-• Share ideas on X (@pnoliveir) or open GitHub issues.
+
+• Share ideas on X (@peterblood850) or open GitHub issues.
+
 • Test on similar hardware (Ubuntu WSL, CUDA GPUs).
+
 • Check docs/model.md (coming soon) for the full theoretical model.
-Hardware Details
+
+## Hardware Details
 • CPUs: Dual Intel Xeon E5-2667v4 (8 cores each, 3.2 GHz).
+
 • RAM: 256 GB DDR4 ECC 2400 MHz.
+
 • GPUs: NVIDIA RTX 4060 Ti (16GB, primary), RTX 3050 (8GB, unused).
+
 • Storage: 10 TB total (SSD, NVMe, SAS RAID-1), ~5 TB free.
+
 • OS: Ubuntu 22.04 on WSL (Windows 10 host).
-Roadmap
+
+## Roadmap
+
 • Short-Term:
+
 • Fix connection loss after tick 18/19 (global ID tracking, relaxed cleanup).
+
 • Reduce logging overhead (buffering, selective output).
+
 • Enable RTX 3050 for ~276M planks.
+
 • Mid-Term:
+
 • Add imaginary clock (\tau_i, t) to Plank struct.
+
 • Implement retrocausality (present-to-past energy updates).
+
 • Long-Term:
+
 • Model black hole cores (\rho \leq 1.13 \times 10^{135} \, \text{kg/m}^3).
+
 • Simulate early universe expansion (Guth’s model).
+
 • Collaborate with X’s LQG, gravastar, and cosmology communities.
-License
+
+## License
 MIT License
-Copyright (c) 2025 pnoliveir
+
+Copyright (c) 2025 Pedro Oliveira
+
 Contact
+
 Ping me on X (@peterblood850) or open a GitHub issue to discuss emergent time, retrocausality, or how to scale this to 2B planks without crashing my GPUs! 
