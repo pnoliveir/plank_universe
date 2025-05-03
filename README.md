@@ -79,4 +79,4 @@ License
 MIT License
 Copyright (c) 2025 pnoliveir
 Contact
-Ping me on X (@pnoliveir) or open a GitHub issue to discuss emergent time, retrocausality, or how to scale this to 2B planks without crashing my GPUs! 
+Ping me on X (@peterblood850) or open a GitHub issue to discuss emergent time, retrocausality, or how to scale this to 2B planks without crashing my GPUs! 
